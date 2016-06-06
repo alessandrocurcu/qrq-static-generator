@@ -1,0 +1,31 @@
+/**
+ * Mixin per i link
+ *
+ * Crea un set base di link; l'idea è che questo mixin non ha dei parametri di
+ * default definiti: in questo modo sei costretto "amichevolmente" ha dichiarare tutti
+ * i quattro stati dei link
+ *
+ * ESEMPIO HTML:
+ *
+ * a {
+ *  @include links(orange, blue, yellow, teal);
+ * }
+ *
+ * FONTE: https://www.smashingmagazine.com/2016/05/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/
+ *
+ */
+
+@mixin qrq-links ($link, $visited, $hover, $active) {
+  & {
+    color: $link;
+    &:visited {
+      color: $visited;
+    }
+    &:hover {
+      color: $hover;
+    }
+    &:active, &:focus {
+      color: $active;
+    }
+  }
+}
