@@ -26,7 +26,7 @@ var browserify = require("gulp-browserify");
 var critical = require("critical");
 var changed = require("gulp-changed");
 var fs = require("fs");
-var config = require("gulpconfig.js")();
+var config = require("./gulpconfig.js")();
 
 /* ==========================================================================
    Development environment
@@ -100,7 +100,7 @@ gulp.task("js", function() {
 
 gulp.task("js:watch", ["js"], function () {
     log("Osservo i file js");
-    gulp.watch(config.sass.js.watch, ["js"]);
+    gulp.watch(config.js.dev.watch, ["js"]);
 });
 
 
