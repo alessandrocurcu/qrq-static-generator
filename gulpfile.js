@@ -239,7 +239,7 @@ gulp.task("build", function() {
 gulp.task("clean:build", function() {
     clean("prod/*.html");
     clean("prod/css/*.css");
-    clean("prod/css/*.js");
+    clean("prod/js/*.js");
 });
 
 
