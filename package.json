@@ -29,6 +29,7 @@
     "gulp-data": "^1.2.1",
     "gulp-if": "^2.0.1",
     "gulp-imagemin": "^3.0.1",
+    "gulp-jade": "^1.1.0",
     "gulp-markdown-to-json": "^0.2.1",
     "gulp-nodemon": "^2.0.7",
     "gulp-plumber": "^1.1.0",

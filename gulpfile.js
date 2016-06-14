@@ -1,6 +1,6 @@
 var gulp = require("gulp");
 var del = require("del");
-var jade = require("gulp-pug");
+var jade = require("gulp-jade");
 var util = require("gulp-util");
 var browserSync = require("browser-sync");
 var nodemon = require("gulp-nodemon");
@@ -72,8 +72,10 @@ gulp.task("sass", function () {
         }))
         .pipe(util.env.prod ? util.noop() : sourcemaps.init())
         .pipe(sass({importer: moduleImporter()}))
-        .pipe(autoprefixer())
-        .pipe(util.env.prod ? uncss({html: ["dev/*.html"]}) : util.noop())
+        .pipe(autoprefixer({
+            browsers: ["last 6 versions"]
+        }))
+        .pipe(util.env.prod ? uncss({html: ["prod/*.html"]}) : util.noop())
         .pipe(util.env.prod ? util.noop() : sourcemaps.write())
         .pipe(util.env.prod ? gulp.dest("prod/css") : gulp.dest("dev/css"))
         .pipe(browserSync.stream());
