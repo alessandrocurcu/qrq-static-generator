@@ -173,7 +173,7 @@ gulp.task("serve", function () {
             "PORT": 3000,
             "NODE_ENV": isDev ? "dev" : "prod"
         },
-        ignore: ["./node_modules", "gulpfile.js"]
+        ignore: ["./node_modules", "gulpfile.js", "gulpconfig.js", "js/**/*.js"]
     };
 
     return nodemon(options)

@@ -4,7 +4,7 @@ module.exports = function() {
     var config = {
 
         jade: {
-            toCompile: "src/views/index.jade",
+            toCompile: "src/views/!(_base)*.jade",
             dev : {
                 watch: ["src/views/**/*.jade", "src/testi/testi_json/*json"]
             },
