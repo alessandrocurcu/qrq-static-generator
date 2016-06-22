@@ -1,3 +1,60 @@
+@import "normalize.css";
+@import "lib/_modular-scale.scss";
+@import "typi";
+@import "susy";
+@import "helpers/mixin";
+@import "helpers/flat-colors";
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+$susy: (
+        columns: 12,
+        container: 100%,
+        gutters: 1/4,
+        gutter-position: after,
+        global-box-sizing: border-box
+);
+
+@include border-box-sizing;
+
+$breakpoints: (
+        medium: 600px,
+        limit: 720px
+);
+
+$tablet: map-get($breakpoints, medium);
+$limit: map-get($breakpoints, limit);
+
+
+/* ==========================================================================
+   Tipografia
+   ========================================================================== */
+
+$verdana: Verdana, Geneva, sans-serif;
+$georgia: Georgia, Times, 'Times New Roman', serif;
+
+$displayFont: $georgia;
+$bodyFont: $georgia;
+
+$ms-base: 1em;
+$ms-ratio: $major-third;
+
+$typi: (
+        null: (16px, 1.4),
+        medium: (20px)
+);
+
+$h1-map: (
+        null: (ms(3), vr(1.4))
+);
+
+$h2-map: (
+        null: (ms(1), vr(0.9)),
+        medium: (ms(1), vr(1.1))
+);
+
 /* ==========================================================================
    Header 1
    ========================================================================== */

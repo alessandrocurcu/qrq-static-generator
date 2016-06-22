@@ -156,7 +156,7 @@ gulp.task("image", function(){
 
 /* serve */
 
-gulp.task("browser-sync", ["serve"], function() {
+gulp.task("browser-sync", function() {
     browserSync.init({
         proxy: "http://localhost:3000",
         browser: "firefoxdeveloperedition",
@@ -173,7 +173,7 @@ gulp.task("serve", function () {
             "PORT": 3000,
             "NODE_ENV": isDev ? "dev" : "prod"
         },
-        ignore: ["./node_modules", "gulpfile.js", "gulpconfig.js", "js/**/*.js"]
+        ignore: ["./node_modules", "gulpfile.js", "gulpconfig.js", "js/**/*.js", "dev/js/**/.js", "prod/js/**/.js"]
     };
 
     return nodemon(options)
@@ -224,7 +224,7 @@ gulp.task("critical_index", function () {
    ========================================================================== */
 
 gulp.task("dev", function() {
-    runSequence("browser-sync", "to_json", ["jade:watch", "sass:watch", "js:watch"]);
+    runSequence("serve", "browser-sync", "to_json", ["jade:watch", "sass:watch", "js:watch"]);
 });
 
 gulp.task("jade:sass:js", function() {
